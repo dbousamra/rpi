@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "exec": "*",
-    "express": "^4.9.7"
+    "express": "^4.9.7",
+    "readline": "0.0.4"
   }
 }

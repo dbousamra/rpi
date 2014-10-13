@@ -1,16 +1,21 @@
 var exec    = require('exec');
 var express = require('express');
+var readline = require('readline');
 var app = express();
 
-var scriptName = './run.sh'
+var latestLine = "No lines read yet"
+
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.on('line', function(line){
+  latestLine = line
+})
 
 app.get('/', function(req, res){
-  exec([scriptName], function(err, out, code) {
-    if (err instanceof Error) {
-      res.status(500).send(err);
-    }
-    res.send(out);
-  });
+  res.send(latestLine)
 });
 
 var server = app.listen(8080, function() {

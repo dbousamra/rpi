@@ -1,1 +1,5 @@
-echo 'Hello World from run.sh'
+while [ "true" ]
+do
+  echo "Hi"
+  sleep 1
+done
